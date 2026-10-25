@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">  
+    <link rel="stylesheet" href="/public/stylesheet.css" />
+    <title>Horror Movie Jounral</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="branding">
+        <h1 class="logo"><a href="/">Horror Journal</a></h1>
+        <p class="site-tagline">Every scare, rated.</p>
+      </div>
+      <a href="/add">Add Review</a>
+    </header>
+
+    <main>
+    <% for (let i = 0; i < reviews.length; i++) { %>
+      <% let review = reviews[i]; %>
+
+      <div class="movie-display-card">
+
+        <div class="poster">
+        <% if (review.posterUrl) { %>
+          <img src="<%= review.posterUrl %>" alt="Poster for <%= review.title %>">
+        <% } else { %>
+          <span>No poster</span>
+        <% } %>
+        </div>
+
+        <div class="info">
+          <h2><%= review.title %> (<%= review.year %>)</h2>
+          <p>Subgenre: <%= review.subgenre[0].toUpperCase() + review.subgenre.slice(1).replace('-', ' ')  %></p>
+          <p>Scare Factor: <span class="knives"><%= '🔪'.repeat(review.scareFactor) %></span></p>
+          <p><%= review.review %></p>
+          <p class="watched">Watched: <%= review.watchedOn.toDateString() %></p>
+
+
+          <div class="actions">
+            <button>
+              <a href="/edit/<%= review._id %>" class="btn-edit">Edit</a>
+            </button>
+          
+            <button type="button" class="delete-button" data-id="<%= review._id%>">Delete</button>
+          
+          </div>
+        </div>
+
+
+      </div>
+    <% } %>
+    </main>
+    <script src="/public/main.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../public/stylesheet.css" />
+    <title>Horror Movie Journal</title>
+  </head>
+  <body>
+    <!------------------ HEADER ------------------>
+    <header class="site-header">
+      <div class="branding">
+        <h1 class="logo"><a href="/">Horror Journal</a></h1>
+        <p class="site-tagline">Every scare, rated.</p>
+      </div>
+    </header>
+
+    <!------------------ MAIN ------------------>
+    <!-- REVIEW ENTRY SECTION -->
+    <main>
+      <form
+        method="POST"
+        action="<%= review._id ? '/edit/' + review._id : '/add-review' %>"
+      >
+        <!---------- FORM ENTRIES ---------->
+
+        <!-- FORM TITLE -->
+        <h3 class="form-heading">
+          <%= review._id ? 'Edit Review' : 'Add A Review' %>
+        </h3>
+
+        <!-- MOVIE TITLE -->
+        <div class="entry-field">
+          <label class="input-label" for="title">Title</label>
+          <input
+            class="input"
+            id="title"
+            name="title"
+            type="text"
+            required
+            value="<%= review.title%>"
+          />
+        </div>
+
+        <!-- MOVIE YEAR -->
+        <div class="entry-field">
+          <label class="input-label" for="year">Year</label>
+          <input
+            class="input"
+            id="year"
+            name="year"
+            type="number"
+            placeholder="i.e. 1982"
+            value="<%= review.year %>"
+          />
+        </div>
+
+        <!-- MOVIE POSTER IMAGE INPUT -->
+        <div class="entry-field">
+          <label class="input-label" for="poster-image"
+            >Poster URL (optional)</label
+          >
+          <input
+            class="input"
+            id="posterUrl"
+            name="posterUrl"
+            type="url"
+            placeholder="https://example.com/poster.jpg"
+            value="<%= review.posterUrl %>"
+          />
+          <p class="url-help">
+            Paste a direct link to an image. Without one, the card shows a plain
+            placeholder.
+          </p>
+        </div>
+
+        <!-- MOVIE SUBGENRE -->
+        <div class="entry-field">
+          <label class="input-label" for="subgenre">Subgenre</label>
+          <select class="input" id="subgenre" name="subgenre" required>
+            <option value="">Choose...</option>
+            <option value="slasher" <%=review.subgenre === 'slasher' ? 'selected' : '' %>>Slasher</option>
+            <option value="supernatural" <%=review.subgenre === 'supernatural' ? 'selected' : '' %>>Supernatural</option>
+            <option value="found-footage" <%=review.subgenre === 'found-footage' ? 'selected' : '' %>>Found Footage</option>
+            <option value="psychological" <%=review.subgenre === 'psychological' ? 'selected' : '' %>>Psychological</option>
+            <option value="zombie" <%=review.subgenre === 'zombie' ? 'selected' : '' %>>Zombies</option>
+            <option value="creature-feature" <%=review.subgenre === 'creature-feature' ? 'selected' : '' %>>Creature Feature</option>
+            <option value="gore" <%=review.subgenre === 'gore' ? 'selected' : '' %>>Gore</option>
+            <option value="body-horror" <%=review.subgenre === 'body-horror' ? 'selected' : '' %>>Body Horror</option>
+            <option value="other" <%=review.subgenre === 'other' ? 'selected' : '' %>>Other</option>
+          </select>
+        </div>
+
+        <!-- MOVIE SCARE FACTOR -->
+        <div class="entry-field">
+          <label class="input-label" for="scareFactor">Scare Factor</label>
+          <select class="input" name="scareFactor" required>
+            <option value="">Rate out of 5 knives</option>
+            <option value="1">🔪</option>
+            <option value="2">🔪🔪</option>
+            <option value="3">🔪🔪🔪</option>
+            <option value="4">🔪🔪🔪🔪</option>
+            <option value="5">🔪🔪🔪🔪🔪</option>
+          </select>
+        </div>
+
+        <!-- MOVIE WATCHED ON -->
+        <div class="entry-field">
+          <label class="input-label" for="watchedOn">Watched On</label>
+          <input class="input" id="watchedOn" name="watchedOn" type="date" value="<%= review.watchedOn ? review.watchedOn.toISOString().slice(0, 10) : '' %>"/>
+        </div>
+
+        <!-- MOVIE REVIEW TEXT -->
+        <div class="entry-field">
+          <label class="input-label" for="review">Review</label>
+          <textarea
+            class="input"
+            id="review"
+            name="review"
+            rows="4"
+            maxlength="600"
+            placeholder="What worked for you, what didn't, and what you will never watch alone again"><%= review.review %></textarea>
+        
+        </div>
+
+        <!-- SAVE OR CANCEL -->
+        <button>Save</button>
+        <button><a href="/">Cancel</a></button>
+      </form>
+    </main>
+  </body>
+</html>
