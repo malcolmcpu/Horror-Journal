@@ -10,7 +10,7 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="branding">
+      <div class="site-branding">
         <h1 class="logo"><a href="/">Horror Journal</a></h1>
         <p class="site-tagline">Every scare, rated.</p>
       </div>
@@ -31,7 +31,7 @@
         <% } %>
         </div>
 
-        <div class="info">
+        <div class="movie-info">
           <h2><%= review.title %> (<%= review.year %>)</h2>
           <p>Subgenre: <%= review.subgenre[0].toUpperCase() + review.subgenre.slice(1).replace('-', ' ')  %></p>
           <p>Scare Factor: <span class="knives"><%= '🔪'.repeat(review.scareFactor) %></span></p>

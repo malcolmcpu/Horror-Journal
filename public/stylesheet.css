@@ -1,1 +1,49 @@
+.logo > a {
+  text-decoration: none;
+  color: #e5222d;
+}
 
+body {
+  margin: 0;
+  padding: 30px;
+  background: rgb(16, 15, 15);
+  color: #e8e6e3;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/*********** HEADER STYLING ***********/
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 24px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid #26262b;
+}
+
+.site-branding {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.logo {
+  margin: 0;
+  color: #e5222d;
+  font-family: 'Special Elite', monospace;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 1.15;
+  letter-spacing: 1px;
+}
+
+.site-tagline {
+  margin: 0;
+  font-size: 15px;
+  color: #ababaf;
+}
