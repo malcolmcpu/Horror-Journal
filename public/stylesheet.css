@@ -104,3 +104,61 @@ body {
   object-fit: cover;
   object-position: top;
 }
+
+/*********** BUTTON STYLING ***********/
+.default-button,
+.add-movie-button,
+.edit-movie-button,
+.deleteButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0 18px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.edit-movie-button a {
+  text-decoration: none;
+  color: #e8e6e3;
+}
+
+.default-button,
+.add-movie-button {
+  background: #b3121e;
+  color: #ffffff;
+  border: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.edit-movie-button {
+  background: transparent;
+  color: #e8e6e3;
+  border: 1px solid #3a3a41;
+}
+.edit-movie-button:hover {
+  border-color: #8a8a90;
+}
+
+.deleteButton {
+  background: transparent;
+  color: var(--red-soft);
+  border: 1px solid #6b1a20;
+}
+
+.deleteButton:hover {
+  background: #2a1013;
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}

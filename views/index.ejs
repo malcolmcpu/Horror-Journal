@@ -14,7 +14,7 @@
         <h1 class="logo"><a href="/">Horror Journal</a></h1>
         <p class="site-tagline">Every scare, rated.</p>
       </div>
-      <a href="/add">Add Review</a>
+      <a href="/add" class="add-movie-button">Add Review</a>
     </header>
 
     <main>
@@ -39,12 +39,12 @@
           <p class="watched-date">Watched: <%= review.watchedOn.toDateString() %></p>
 
 
-          <div class="actions">
-            <button>
-              <a href="/edit/<%= review._id %>" class="btn-edit">Edit</a>
+          <div class="action-buttons">
+            <button class="edit-movie-button">
+              <a href="/edit/<%= review._id %>">Edit</a>
             </button>
           
-            <button type="button" class="delete-button" data-id="<%= review._id%>">Delete</button>
+            <button type="button" class="deleteButton" data-id="<%= review._id%>">Delete</button>
           
           </div>
         </div>
