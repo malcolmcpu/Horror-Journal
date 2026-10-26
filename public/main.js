@@ -1,5 +1,5 @@
 console.log('main.js loaded');
-const deleteButtons = document.querySelectorAll('.delete-button');
+const deleteButtons = document.querySelectorAll('.deleteButton');
 console.log('buttons found: ', deleteButtons.length);
 
 deleteButtons.forEach((button) => {
