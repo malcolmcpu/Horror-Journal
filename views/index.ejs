@@ -10,11 +10,11 @@
   </head>
   <body>
     <header class="site-header">
-      <div class="branding">
+      <div class="site-branding">
         <h1 class="logo"><a href="/">Horror Journal</a></h1>
         <p class="site-tagline">Every scare, rated.</p>
       </div>
-      <a href="/add">Add Review</a>
+      <a href="/add" class="add-movie-button">Add Review</a>
     </header>
 
     <main>
@@ -23,28 +23,28 @@
 
       <div class="movie-display-card">
 
-        <div class="poster">
+        <div class="movie-poster">
         <% if (review.posterUrl) { %>
           <img src="<%= review.posterUrl %>" alt="Poster for <%= review.title %>">
         <% } else { %>
-          <span>No poster</span>
+          <span>NO POSTER</span>
         <% } %>
         </div>
 
-        <div class="info">
+        <div class="movie-info">
           <h2><%= review.title %> (<%= review.year %>)</h2>
           <p>Subgenre: <%= review.subgenre[0].toUpperCase() + review.subgenre.slice(1).replace('-', ' ')  %></p>
           <p>Scare Factor: <span class="knives"><%= '🔪'.repeat(review.scareFactor) %></span></p>
           <p><%= review.review %></p>
-          <p class="watched">Watched: <%= review.watchedOn.toDateString() %></p>
+          <p class="watched-date">Watched: <%= review.watchedOn.toDateString() %></p>
 
 
-          <div class="actions">
-            <button>
-              <a href="/edit/<%= review._id %>" class="btn-edit">Edit</a>
+          <div class="action-buttons">
+            <button class="edit-movie-button">
+              <a href="/edit/<%= review._id %>">Edit</a>
             </button>
           
-            <button type="button" class="delete-button" data-id="<%= review._id%>">Delete</button>
+            <button type="button" class="deleteButton" data-id="<%= review._id%>">Delete</button>
           
           </div>
         </div>

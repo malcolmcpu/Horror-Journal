@@ -11,7 +11,7 @@
   <body>
     <!------------------ HEADER ------------------>
     <header class="site-header">
-      <div class="branding">
+      <div class="site-branding">
         <h1 class="logo"><a href="/">Horror Journal</a></h1>
         <p class="site-tagline">Every scare, rated.</p>
       </div>
@@ -126,8 +126,8 @@
         </div>
 
         <!-- SAVE OR CANCEL -->
-        <button>Save</button>
-        <button><a href="/">Cancel</a></button>
+        <button class="default-button"><%= review._id ? 'Save Changes' : 'Add Review' %></button>
+        <a href="/" class="link-cancel">Cancel</a>
       </form>
     </main>
   </body>
