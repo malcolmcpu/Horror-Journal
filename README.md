@@ -9,9 +9,7 @@ Horror Journal is a personal review journal for horror movies. Log the movies yo
 
 ## Try it Here!
 
-[Horror Journal on Render](https://your-app-name.onrender.com)
-
-_Replace this link with your deployed site, or delete this section if the project isn't deployed._
+[Horror Journal on Render](https://horror-journal.onrender.com/)
 
 ## Features
 
