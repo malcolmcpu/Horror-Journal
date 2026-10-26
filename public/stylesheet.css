@@ -162,3 +162,62 @@ body {
   gap: 15px;
   margin-top: 10px;
 }
+
+/*********** MOVIE FORM STYLING ***********/
+
+form {
+  max-width: 520px;
+  padding: 32px;
+  background: #1a1a1e;
+  border: 5px solid #26262b;
+  border-radius: 15px;
+}
+
+form h3 {
+  margin: 0 0 20px;
+  font-family: 'Special Elite', monospace;
+  font-weight: 400;
+  font-size: 30px;
+}
+
+.entry-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.input-label {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.input {
+  width: 100%;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: 0 14px;
+  background: #0d0d0f;
+  color: #e8e6e3;
+  border: 1px solid white;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+input::placeholder {
+  color: #8a8a90;
+}
+
+.url-help {
+  margin: 0;
+  font-size: 13px;
+  color: #8a8a90;
+}
+
+.link-cancel {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 8px;
+  color: #c9c7c3;
+}
