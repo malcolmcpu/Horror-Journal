@@ -148,7 +148,7 @@ body {
 
 .deleteButton {
   background: transparent;
-  color: var(--red-soft);
+  color: #ff7b82;
   border: 1px solid #6b1a20;
 }
 
